@@ -48,6 +48,9 @@ class Solution
     static int findNumberOfTriangles(int arr[], int n)
     {
         // code here
+        //sorting is the key here and do check the utube video to again understand the concept
+        // a+b>c so only sorting 
+        // fixing c constant   https://www.youtube.com/watch?v=XGzCUpy_aFk
          Arrays.sort(arr);
         int count = 0;
 
