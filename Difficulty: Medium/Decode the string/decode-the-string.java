@@ -26,7 +26,7 @@ class GFG{
 
 class Solution{
     static String decodedString(String s){
-        // code here
+        // https://www.youtube.com/watch?v=P7iR5iweg1M
         Stack<Integer> countStack = new Stack<>();
         Stack<String> stringStack = new Stack<>();
         String currentString = "";
