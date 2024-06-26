@@ -27,9 +27,9 @@ class GFG{
 class Solution{
     static String decodedString(String s){
         // code here
-         Stack<Integer> countStack = new Stack<>();
-        Stack<StringBuilder> stringStack = new Stack<>();
-        StringBuilder currentString = new StringBuilder();
+        Stack<Integer> countStack = new Stack<>();
+        Stack<String> stringStack = new Stack<>();
+        String currentString = "";
         int currentNumber = 0;
         
         for (char ch : s.toCharArray()) {
@@ -39,19 +39,19 @@ class Solution{
                 countStack.push(currentNumber);
                 stringStack.push(currentString);
                 currentNumber = 0;
-                currentString = new StringBuilder();
+                currentString = "";
             } else if (ch == ']') {
-                StringBuilder decodedSubstring = currentString;
+                String decodedSubstring = currentString;
                 currentString = stringStack.pop();
                 int repeatTimes = countStack.pop();
                 for (int i = 0; i < repeatTimes; i++) {
-                    currentString.append(decodedSubstring);
+                    currentString += decodedSubstring;
                 }
             } else {
-                currentString.append(ch);
+                currentString += ch;
             }
         }
         
-        return currentString.toString();
+        return currentString;
     }
 }
