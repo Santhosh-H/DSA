@@ -9,10 +9,16 @@ class Solution {
 // utilizing the periodicity of digits in base-10. 
 //The result of this formula is always a single-digit number that is the sum of the digits of the original number.
     public int addDigits(int num) {
-        if (num == 0) {
-            return 0;
-        } else {
-            return 1 + (num - 1) % 9;
-        }
+        // if (num == 0) {
+        //     return 0;
+        // } else {
+        //     return 1 + (num - 1) % 9;
+        // }
+        if(num==0)
+        return 0;
+        if(num%9==0)
+        return 9;
+        else
+        return num%9;
     }
 }
