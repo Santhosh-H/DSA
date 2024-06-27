@@ -33,6 +33,7 @@ public class GfG
 
 class Solution
 {
+    //https://www.youtube.com/watch?v=LPs6Qo5qlJM&list=TLPQMjcwNjIwMjQfnCvV-b8R2A&index=2
      public static int wordBreak(int n, String s, ArrayList<String> dictionary) {
         Map<String, Boolean> map = new HashMap<>();
         return wordBreakHelper(s, dictionary, map) ? 1 : 0;
