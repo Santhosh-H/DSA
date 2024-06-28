@@ -1,0 +1,44 @@
+
+Find the Number which contain the digit d
+Last Updated : 13 Dec, 2023
+Given two integer number n and d. The task is to find the number between 0 to n which contain the specific digit d.
+
+Examples: 
+
+Input : n = 20
+        d = 5
+Output : 5 15
+
+Input : n = 50
+        d = 2
+Output : 2 12 20 21 22 23 24 25 26 27 28 29 32 42
+
+
+import java.util.ArrayList;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int n = 50;
+        int d = 2;
+        
+        List<Integer> result = findNumbersWithDigit(n, d);
+        
+        for (int num : result) {
+            System.out.print(num + " ");
+        }
+    }
+    
+    public static List<Integer> findNumbersWithDigit(int n, int d) {
+        List<Integer> result = new ArrayList<>();
+        String digit = String.valueOf(d);
+       // System.out.println(digit);
+        for (int i = 0; i <= n; i++) {
+            if (String.valueOf(i).contains(digit)) {
+                result.add(i);
+            }
+        }
+        
+        return result;
+    }
+}
