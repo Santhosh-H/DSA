@@ -36,6 +36,20 @@ public class Main {
 
 
 class Solution {
+    //Hashmap also works but it is time complexity so use interview hashmap zoho
+    
+    // public static int count(int[] arr, int n, int x) {
+    //     // Create a HashMap to store element frequencies
+    //     HashMap<Integer, Integer> map = new HashMap<>();
+        
+    //     // Populate the HashMap with counts of each element in arr
+    //     for (int num : arr) {
+    //         map.put(num, map.getOrDefault(num, 0) + 1);
+    //     }
+        
+    //     // Return the count of x from the HashMap
+    //     return map.getOrDefault(x, 0);
+    // }
     int count(int[] arr, int n, int x) {
        int firstIndex = findFirstIndex(arr, n, x);
         
