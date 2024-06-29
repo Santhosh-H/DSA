@@ -1,0 +1,66 @@
+Cricket Scores
+Given a timeline of scores, find the individual scores of player 1 and player 2 and Extras
+W – Wide N – No Ball . – Dot Ball
+Consider the game starts from player 1
+I/P:
+1 . 2 . 4 3 6 W 1 . N . 2 1
+
+
+O/P:
+P1 – 8
+P2 – 12
+Extras – 2
+
+------------------
+import java.util.Scanner;
+
+public class CricketScores {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the timeline of scores
+        String timeline = scanner.nextLine();
+
+        // Initialize counters
+        int player1Score = 0;
+        int player2Score = 0;
+        int extras = 0;
+        boolean isPlayer1OnStrike = true; // Player 1 starts on strike
+
+        // Split the timeline into individual events
+        String[] events = timeline.split(" ");
+
+        // Process each event
+        for (String event : events) {
+            switch (event) {
+                case "W": // Wide ball
+                    extras += 1;
+                    break;
+                case "N": // No ball
+                    extras += 1;
+                    break;
+                case ".": // Dot ball, no runs
+                    break;
+                default: // Runs scored
+                    int runs = Integer.parseInt(event);
+                    if (isPlayer1OnStrike) {
+                        player1Score += runs;
+                    } else {
+                        player2Score += runs;
+                    }
+
+                    // Switch strike if runs scored are odd
+                    if (runs % 2 != 0) {
+                        isPlayer1OnStrike = !isPlayer1OnStrike;
+                    }
+                    break;
+            }
+        }
+
+        // Output the scores
+        System.out.println("P1 " + player1Score);
+        System.out.println("P2  " + player2Score);
+        System.out.println("Extras  " + extras);
+    }
+}
