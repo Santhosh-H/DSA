@@ -26,8 +26,7 @@ class GFG {
 
 class Solution {
     String findSum(String X, String Y) {
-        // code here
-        int m = X.length();
+    int m = X.length();
     int n = Y.length();
     int maxLength = Math.max(m, n);
     
