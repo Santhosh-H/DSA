@@ -10,31 +10,21 @@ import java.util.*;
 import java.math.BigInteger;
 import java.util.ArrayList;
 class Solution {
-    // Method to compute the factorial of a number using BigInteger
-    public static BigInteger computeFactorial(int n) {
+   static ArrayList<Integer> factorial(int N) {
+        // code here
         BigInteger result = BigInteger.ONE;
-        for (int i = 2; i <= n; i++) {
+        for (int i = 2; i <= N; i++) {
             result = result.multiply(BigInteger.valueOf(i));
         }
-        return result;
-    }
 
-    // Method to convert a BigInteger to a list of digits
-    public static ArrayList<Integer> convertToList(BigInteger num) {
+        // Convert the BigInteger result to a list of digits
         ArrayList<Integer> digitList = new ArrayList<>();
-        String numStr = num.toString();
+        String numStr = result.toString();
         for (char digit : numStr.toCharArray()) {
             digitList.add(Character.getNumericValue(digit));
         }
+
         return digitList;
-    }
-
-    // Method to compute the factorial and return the list of digits
-    static ArrayList<Integer> factorial(int N) {
-        BigInteger factorial = computeFactorial(N);
-        return convertToList(factorial);
-    }
-
 }
 
 //{ Driver Code Starts.
