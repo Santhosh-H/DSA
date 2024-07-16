@@ -61,7 +61,7 @@ class Solution {
 
             if (val1 == val2 && val2 == val3) {
                 // Avoid adding duplicates
-                if (result.isEmpty() || !result.get(result.size() - 1).equals(val1)) {
+                if (result.isEmpty() || !(result.get(result.size() - 1)==val1)) {
                     result.add(val1);
                 }
                 i++;
