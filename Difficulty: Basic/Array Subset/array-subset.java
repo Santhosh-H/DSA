@@ -44,6 +44,14 @@ class GFG {
 
 //User function Template for Java
 
+//!frequencyMap.containsKey(num): This checks if the element num is not present in the frequencyMap.
+	//If the element is not in the map, it means that a1 does not contain this element at all,
+	//hence a2 cannot be a subset of a1.
+	
+        //frequencyMap.get(num) == 0: This checks if the count of the element num in frequencyMap is zero.
+	//Even if the element exists in the map, if its count has been depleted to zero
+	//(meaning all occurrences have already been matched by previous elements in a2), 
+        //then we can't match the current occurrence of num in a2
 
 class Compute {
     public String isSubset( long a1[], long a2[], long n, long m) {
@@ -53,8 +61,7 @@ class Compute {
         for (long num : a1) {
             frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
         }
-        
-        // Check frequencies of each element in a2
+        // Check frequencies of each element in a2   
         for (long num : a2) {
             if (!frequencyMap.containsKey(num) || frequencyMap.get(num) == 0) {
                 return "No";
