@@ -40,16 +40,13 @@ class Solution
     {
         // your code here
         Collections.sort(a);
-        long mini=Long.MAX_VALUE;
-        for(int i=0;i<n;i++){
-            int start=i;
-            if(i==n-m+1)
-            break;
-            int end=start+m-1;
-            long temp=a.get(end)-a.get(start);
-            if(temp<mini)
-            mini=temp;
+        long ans=Long.MAX_VALUE;
+        int i=0,j=m-1;
+        while(j<n){
+            ans=Math.min(ans,a.get(j)-a.get(i));
+            i++;
+            j++;
         }
-        return mini;
+        return ans;
     }
 }
