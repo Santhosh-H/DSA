@@ -18,8 +18,10 @@ class Solution {
     //         return false;
     //     }
     // }
-
     // return true;
+
+    // optimal solution
+
    if (s.length() != t.length()) {
         return false;
     }
