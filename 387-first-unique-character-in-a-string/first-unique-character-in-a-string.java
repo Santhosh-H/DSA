@@ -1,5 +1,8 @@
 class Solution {
     public int firstUniqChar(String s) {
+
+        ///Better solution
+
 //          Map<Character, Integer> map = new HashMap<>();
 //         for (int i = 0; i < s.length(); i++) {
 //         char c = s.charAt(i);
@@ -16,6 +19,8 @@ class Solution {
 //     // Return -1 if no unique character is found
 //     return -1;
 // }
+       // optimal solution
+       
     int[] charCount = new int[26]; // Since the problem states that the string only contains lowercase letters
 
     // Populate the array with character frequencies
