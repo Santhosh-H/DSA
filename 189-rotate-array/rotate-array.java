@@ -11,7 +11,7 @@ class Solution {
     public void rotate(int[] nums, int k) {
         int n=nums.length;
         if(n==1) return;
-        k=k%n;
+        if(k>n) k=k%n;
         int left=0;
         int right=n-1-k;
         reverse(nums,left,right);
