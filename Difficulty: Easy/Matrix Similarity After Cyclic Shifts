@@ -54,6 +54,67 @@ Constraints:
 1 <= k <= 50
 
 
+source code:: 
+
+class Solution {
+    private static void leftShift(int[] row, int k) {
+        int n = row.length;
+        k = k % n;
+        reverse(row, 0, n - 1);
+        reverse(row, 0, n - k - 1);
+        reverse(row, n - k, n - 1);
+    }
+
+    private static void rightShift(int[] row, int k) {
+        int n = row.length;
+        k = k % n;
+        reverse(row, 0, n - 1);
+        reverse(row, 0, k - 1);
+        reverse(row, k, n - 1);
+    }
+
+    private static void reverse(int[] row, int start, int end) {
+        while (start < end) {
+            int temp = row[start];
+            row[start] = row[end];
+            row[end] = temp;
+            start++;
+            end--;
+        }
+    }
+
+    public boolean areSimilar(int[][] mat, int k) {
+        int m = mat.length;
+        int n = mat[0].length;
+
+        // Create a copy of the original matrix
+        int[][] modifiedMat = new int[m][n];
+        for (int i = 0; i < m; i++) {
+            modifiedMat[i] = mat[i].clone();
+        }
+
+        // Perform the cyclic shifts
+        for (int i = 0; i < m; i++) {
+            if (i % 2 == 0) { // Even-indexed rows
+                leftShift(modifiedMat[i], k);
+            } else { // Odd-indexed rows
+                rightShift(modifiedMat[i], k);
+            }
+        }
+
+        // Compare the modified matrix with the original matrix
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (mat[i][j] != modifiedMat[i][j]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+
+    }
+}
+
 
 
 
