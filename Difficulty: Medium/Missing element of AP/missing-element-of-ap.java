@@ -41,3 +41,27 @@ class Solution {
         return ans;
     }
 }
+
+///optimal solution using binary search chatgpt O(logn) time
+public static int findMissingElement(int[] arr) {
+        int n = arr.length;
+        int d = (arr[n - 1] - arr[0]) / n;
+        
+        int low = 0, high = n - 1;
+        
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            int expected = arr[0] + mid * d;
+            
+            if (arr[mid] == expected) {
+                // The missing element is in the right half
+                low = mid + 1;
+            } else {
+                // The missing element is in the left half
+                high = mid - 1;
+            }
+        }
+        
+        // The missing element is the expected value at the position `low`
+        return arr[0] + low * d;
+    }
