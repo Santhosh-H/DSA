@@ -15,6 +15,9 @@ class Solution {
         // p.offer(l.get(i));
         // if(p.size()>k) p.poll();}
         // return p.peek();
+        
+        // optimized working approach using sorting and binary search
+
         Arrays.sort(nums);
         int n = nums.length;
         int left = 0, right = nums[n - 1] - nums[0];
@@ -37,4 +40,5 @@ class Solution {
         
         return left;
     }
+ 
 }
