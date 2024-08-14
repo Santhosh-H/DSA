@@ -1,5 +1,6 @@
 class Solution {
     public int mySqrt(int x) {
+
         int left = 0;        // Initialize the left boundary of the search space
         int right = x;       // Initialize the right boundary of the search space
 
@@ -14,5 +15,6 @@ class Solution {
         }
         // The loop exits when left == right, which will be the largest integer less than or equal to the sqrt(x)
         return left; // Return the calculated square root
+
     }
 }
