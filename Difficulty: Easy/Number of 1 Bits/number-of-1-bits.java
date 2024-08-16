@@ -24,13 +24,13 @@ class GFG {
 class Solution {
     static int setBits(int N) {
         // code here
-        int count=0;
-        int n=N;
-        while(n!=1){
-            if(n%2==1) 
-            count =count+1;
-            n=n/2;
+       int ans = 0;
+        
+        while(N!=0){
+            ++ans;
+            N &= (N - 1);
         }
-        return count+1;
+        
+        return ans;
     }
 }
